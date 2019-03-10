@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/gaab/
+sudo rm -rf /tmp/gaab/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/map-history/gaab.git /tmp/gaab
 cd /tmp/gaab
 chmod +x /tmp/gaab/gaab
 chmod 777 ./*.sh
-cp /tmp/gaab/gaab /usr/bin/
+sudo cp /tmp/gaab/gaab /usr/bin/
 sleep 3
 
 
